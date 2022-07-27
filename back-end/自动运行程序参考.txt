@@ -1,0 +1,13 @@
+# 后台持续运行  程序：
+# nohup python3 come2go_time.py >run.log 2>&1 &
+# nohup autoGo.sh >run.log 2>&1 &
+
+# 查看 pid：
+# ps -ef | grep python
+
+# 关闭后台程序
+# kill -9 ${pid}
+
+
+Python脚本自启动和定时启动
+https://zhuanlan.zhihu.com/p/89772177
