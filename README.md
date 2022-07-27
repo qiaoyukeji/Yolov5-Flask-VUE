@@ -1,3 +1,8 @@
+拷贝本程序： `git clone -b yolov5_6.0 https://github.com/qiaoyukeji/Yolov5-Flask-VUE.git`
+
+
+项目部署参考：[https://blog.csdn.net/qiaoyurensheng/article/details/124940950](https://blog.csdn.net/qiaoyurensheng/article/details/124940950)
+
 # 1. 效果：
 
 视频链接：
