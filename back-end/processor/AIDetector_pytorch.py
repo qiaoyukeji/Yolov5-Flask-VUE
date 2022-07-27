@@ -1,3 +1,12 @@
+'''
+Author: qiaoyu
+Date: 2022-07-27 09:32:16
+LastEditTime: 2022-07-27 10:02:40
+LastEditors: qiaoyu
+Description: 
+FilePath: \Yolov5-Flask-VUE\yolov5_reco\processor\AIDetector_pytorch.py
+Made by qiaoyukeji@gmail.com
+'''
 import torch
 import numpy as np
 from models.experimental import attempt_load
@@ -22,7 +31,8 @@ class Detector(object):
         self.device = select_device(self.device)
         model = attempt_load(self.weights, map_location=self.device)
         model.to(self.device).eval()
-        model.half()
+        # model.half()
+        model.float()
         # torch.save(model, 'test.pt')
         self.m = model
         self.names = model.module.names if hasattr(
@@ -38,7 +48,9 @@ class Detector(object):
         img = img[:, :, ::-1].transpose(2, 0, 1)
         img = np.ascontiguousarray(img)
         img = torch.from_numpy(img).to(self.device)
-        img = img.half()  # 半精度
+        # img = img.half()  # 半精度
+        img = img.float()  # 半精度
+        # img = img.float()  # 半精度
         img /= 255.0  # 图像归一化
         if img.ndimension() == 3:
             img = img.unsqueeze(0)

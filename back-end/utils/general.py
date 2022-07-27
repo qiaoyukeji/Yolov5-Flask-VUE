@@ -369,6 +369,7 @@ def strip_optimizer(f='weights/best.pt', s=''):
     x['training_results'] = None
     x['epoch'] = -1
     x['model'].half()  # to FP16
+    # x['model'].float()  # to FP16
     for p in x['model'].parameters():
         p.requires_grad = False
     torch.save(x, s or f)

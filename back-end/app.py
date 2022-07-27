@@ -53,8 +53,8 @@ def upload_file():
         pid, image_info = core.main.c_main(
             image_path, current_app.model, file.filename.rsplit('.', 1)[1])
         return jsonify({'status': 1,
-                        'image_url': 'http://127.0.0.1:5003/tmp/ct/' + pid,
-                        'draw_url': 'http://127.0.0.1:5003/tmp/draw/' + pid,
+                        'image_url': 'http://127.0.0.1:15003/tmp/ct/' + pid,
+                        'draw_url': 'http://127.0.0.1:15003/tmp/draw/' + pid,
                         'image_info': image_info})
 
     return jsonify({'status': 0})
@@ -80,4 +80,4 @@ def show_photo(file):
 if __name__ == '__main__':
     with app.app_context():
         current_app.model = Detector()
-    app.run(host='127.0.0.1', port=5003, debug=True)
+    app.run(host='0.0.0.0', port=15003, debug=True)

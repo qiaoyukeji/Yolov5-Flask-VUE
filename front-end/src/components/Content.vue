@@ -153,7 +153,7 @@ export default {
   name: "Content",
   data() {
     return {
-      server_url: "http://127.0.0.1:5003",
+      server_url: "http://127.0.0.1:15003",
       activeName: "first",
       active: 0,
       centerDialogVisible: true,
